@@ -18,20 +18,35 @@ function notionCarousel(props) {
     let carousels = parent.find(`.carousel-item`)
     let nextBtn = parent.find(`.carousel-next`)
     let prevBtn = parent.find(`.carousel-prev`)
-    let navigator = parent.find(`.carousel-navigator`)
+    let navigator = parent.find(`.navigator .buttons`)
+    let indicator = parent.find(`.navigator .indicator`)
+    let animationType = `swing`;
+    let current = $(`.carousel-item.active`)
 
+    carousels.each(function () {
+        indicator.append(
+            `<div></div>`
+        )
+    })
+
+    let indicators = indicator.find(`div`)
+
+    indicators.eq(current.index()).addClass(`active`)
 
     nextBtn.on(`click`, function (e) {
         let current = $(`.carousel-item.active`)
         let next = current.next();
 
-        if (next.index() == carousels.length ) next = carousels.eq(0)
+        if (next.index() == carousels.length) next = carousels.eq(0)
+
+        indicators.removeClass(`active`)
 
         current.animate(
             {
                 left: `-100%`
             },
             500,
+            animationType,
             function (e) {
                 $(this).removeClass(`active`)
             }
@@ -47,8 +62,51 @@ function notionCarousel(props) {
                 right: 0
             },
             500,
+            animationType,
             function (e) {
                 $(this).addClass(`active`)
+                indicators.eq($(this).index()).addClass(`active`)
+            }
+        )
+    })
+
+
+    prevBtn.on(`click`, function (e) {
+        let current = $(`.carousel-item.active`)
+        let prev = carousels.eq(current.index() - 1);
+
+        indicators.removeClass(`active`)
+
+        current.css(
+            {
+                left: `auto`
+            }
+        ).animate(
+            {
+                right: `-100%`
+            },
+            500,
+            animationType,
+            function (e) {
+                $(this).removeClass(`active`)
+            }
+        )
+
+        prev.css(
+            {
+                right: `auto`,
+                left: `-100%`,
+                zIndex: 99
+            }
+        ).animate(
+            {
+                left: 0
+            },
+            500,
+            animationType,
+            function (e) {
+                $(this).addClass(`active`)
+                indicators.eq($(this).index()).addClass(`active`)
             }
         )
     })

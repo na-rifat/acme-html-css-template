@@ -156,9 +156,9 @@ section.cover {
     flex-flow: column;
     padding-right: 30%;
 }
-.carousel-wrapper > * {
+/* .carousel-wrapper > * {
     margin: 20px 0;
-}
+} */
 .carousel-item h1 {
     font-family: HelveticaNeueM;
     font-style: normal;
@@ -167,6 +167,7 @@ section.cover {
     line-height: 60px;
     letter-spacing: -1px;
     color: #ffffff;
+    margin-bottom: 24px;
 }
 .carousel-item p {
     font-family: HelveticaNeueL;
@@ -176,6 +177,7 @@ section.cover {
     line-height: 28px;
     color: #ffffff;
     margin-top: 0 !important;
+    margin-bottom: 40px;
 }
 .carousel-item .action-button {
     padding: 12px 37px;
@@ -188,6 +190,7 @@ section.cover {
     position: absolute;
     bottom: 50px;
     left: 0;
+    width: 100%;
 }
 .notion-carousel .navigator .wrapper {
     display: flex;
@@ -204,7 +207,22 @@ section.cover {
     background-color: rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
-
+.notion-carousel .indicator {
+    display: flex;
+    margin-right: auto;
+}
+.notion-carousel .indicator > div:not(:last-child) {
+    margin-right: 15px;
+}
+.notion-carousel .indicator > div {
+    width: 30px;
+    height: 4px;
+    background-color: var(--gray);
+    transition: 0.3s all linear;
+}
+.notion-carousel .indicator > div.active {
+    background-color: blue !important;
+}
 /* Brand logos */
 section.customer-logos {
     text-align: center;
@@ -218,11 +236,17 @@ section.customer-logos p {
     line-height: 20px;
     text-align: center;
     color: #b9b9b9;
+    font-family: Helvetica;
 }
 section.customer-logos .logo-holder {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo-holder img {
+    margin: 10px;
 }
 
 /* Content panel */
@@ -247,8 +271,11 @@ section.accordion-section h2 {
     line-height: 48px;
     letter-spacing: -0.5px;
     color: #000000;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
 }
-section.content-panel p,
+/* section.content-panel p, */
 section.pricing-section p,
 section.accordion-section p {
     font-family: Helvetica;
@@ -291,7 +318,31 @@ section.video-panel {
 section.video-panel > * {
     margin: 20px 0;
 }
-section.video-panel p {
+section.video-panel p:first-child {
+    font-family: Helvetica;
+    max-width: 540px;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 156% */
+
+    text-align: center;
+
+    /* Dark – #000000 */
+
+    color: #000000;
+}
+section.video-panel p:last-child {
+    font-family: Helvetica;
+
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+
+    text-align: center;
+
+    /* Dark – #000000 */
+
+    color: #000000;
     max-width: 540px;
 }
 .two-col {
@@ -310,7 +361,49 @@ section.video-panel p {
     flex-flow: column;
     align-items: center;
 }
+.content-container > p {
+    font-family: Helvetica;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
 
+    letter-spacing: 0.1px;
+
+    /* Dark – #000000 */
+
+    color: #000000;
+}
+.two-col p {
+    font-family: Helvetica;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+
+    /* Dark – #000000 */
+
+    color: #000000;
+}
+.content-panel .col-md-6:first-child.content-container {
+    padding-right: 7rem;
+}
+.content-panel .col-md-6:last-child.content-container {
+    padding-left: 7rem;
+}
+.link {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+
+    display: flex;
+    align-items: center;
+
+    /* Primary 1 – #0065F2 */
+
+    color: #0065f2;
+}
 /* Pricing section */
 section.pricing-section {
     display: flex;
@@ -330,6 +423,7 @@ section.pricing-section {
 .pricing-tab .tab-key {
     padding: 15px 20px;
     transition: 0.5s all linear;
+    cursor: pointer;
 }
 .pricing-tab .tab-key:not(.active) {
     font-style: normal;
@@ -361,6 +455,7 @@ section.pricing-section {
 .pricing-tab .tab-page:not(.active) {
     display: none;
 }
+
 .price-card {
     padding: 24px;
     background: #ffffff;
@@ -371,6 +466,7 @@ section.pricing-section {
     flex-flow: column;
     justify-content: space-between;
     position: relative;
+    font-family: Helvetica;
 }
 .price__title {
     font-style: normal;
@@ -426,9 +522,30 @@ section.pricing-section {
 }
 .price__features li {
     text-align: left;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.1px;
+
+    /* Dark – #000000 */
+
+    color: #000000;
 }
 .price__button .primary-button {
     width: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    text-align: center;
+    letter-spacing: 0.1px;
+
+    /* Light – #FFFFFF */
+
+    color: #ffffff;
 }
 .price-card .top-info > *:not(:last-child) {
     margin-bottom: 20px;
@@ -441,7 +558,21 @@ section.pricing-section {
     display: flex;
     justify-content: space-between;
 }
+.tagline {
+    font-family: HelveticaNeueM;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
 
+    text-align: center;
+    letter-spacing: 0.1px;
+
+    /* Dark – #000000 */
+
+    color: #000000;
+}
 /* Accordion sections */
 section.accordion-section {
     text-align: center;
@@ -472,6 +603,7 @@ section.accordion-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 .accordion-item .accordion-title {
     font-family: HelveticaNeueM;
