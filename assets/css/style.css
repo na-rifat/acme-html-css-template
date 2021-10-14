@@ -3,60 +3,22 @@
     font-family: HelveticaNeueN;
     src: url("../fonts/HelveticaNeueBlack.otf") format("opentype");
 }
-@font-face {
-    font-family: HelveticaNeueBLI;
-    src: url("../fonts/HelveticaNeueBlackItalic.otf") format("opentype");
-}
-@font-face {
-    font-family: HelveticaNeueBI;
-    src: url("../fonts/HelveticaNeueBoldItalic.otf") format("opentype");
-}
-@font-face {
-    font-family: HelveticaNeueH;
-    src: url("../fonts/HelveticaNeueHeavy.otf") format("opentype");
-}
-@font-face {
-    font-family: HelveticaNeueI;
-    src: url("../fonts/HelveticaNeueItalic.ttf");
-}
+
 @font-face {
     font-family: HelveticaNeueL;
     src: url("../fonts/HelveticaNeueLight.otf") format("opentype");
 }
-@font-face {
-    font-family: HelveticaNeueLI;
-    src: url("../fonts/HelveticaNeueLightItalic.otf") format("opentype");
-}
+
 @font-face {
     font-family: HelveticaNeueM;
     src: url("../fonts/HelveticaNeueMedium.otf") format("opentype");
 }
-@font-face {
-    font-family: HelveticaNeueMI;
-    src: url("../fonts/HelveticaNeueMediumItalic.otf") format("opentype");
-}
 
-@font-face {
-    font-family: HelveticaNeueR;
-    src: url("../fonts/HelveticaNeueRoman.otf") format("opentype");
-}
-@font-face {
-    font-family: HelveticaNeueT;
-    src: url("../fonts/HelveticaNeueThin.otf") format("opentype");
-}
-@font-face {
-    font-family: HelveticaNeueUL;
-    src: url("../fonts/HelveticaNeueUltraLight.otf") format("opentype");
-}
-@font-face {
-    font-family: HelveticaNeueULI;
-    src: url("../fonts/HelveticaNeueUltraLightItalic.otf") format("opentype");
-}
 /* Vars */
 :root {
     --hlvn: HelveticaNeueN;
-    --hlvm: HelveticaNeueMD, sans-serif;
-    --hlvul: HelveticaNeueMD, sans-serif;
+    --hlvm: HelveticaNeueM, sans-serif;
+    --hlvl: HelveticaNeueL, sans-serif;
     --hlv: HelveticaNeue;
     --black: #000;
     --white: #fff;
@@ -89,7 +51,9 @@ header .wrapper {
     height: 100%;
     padding: 0 2rem;
 }
-
+header .action-button img {
+    display: none;
+}
 .top-nav ul {
     display: flex;
     list-style-type: none;
@@ -774,6 +738,15 @@ footer .row {
         left: 0;
         top: 100%;
         height: auto;
+    }
+    header .action-button {
+        background-color: transparent;
+    }
+    header .action-button span {
+        display: none;
+    }
+    header .action-button img {
+        display: block;
     }
     .top-nav ul {
         flex-flow: column;

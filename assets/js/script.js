@@ -15,6 +15,11 @@ $(document).ready(function () {
     notionToggleMenu();
 });
 
+/**
+ * Handles Ndotiohive carousle
+ * @author Nura Alam Rifat
+ * @param {object} props 
+ */
 function notionCarousel(props) {
     let parent = $(`.notion-carousel`)
     let carousels = parent.find(`.carousel-item`)
@@ -123,6 +128,11 @@ function notionCarousel(props) {
     }
 }
 
+/**
+ * Handles Notionhive accordion
+ * @author Nura Alam Rifat
+ * @param {object} props 
+ */
 function notionAccordion(props) {
     let parent = $(`.notion-accordion`)
     let items = parent.find(`.accordion-item`)
@@ -169,6 +179,10 @@ function notionAccordion(props) {
     }
 }
 
+/**
+ * Handles Notionhive pricing tab navigation
+ * @author Nura Alam Rifat
+ */
 function notionPricingTab() {
     let parent = $(`.pricing-tab`)
     let keys = parent.find(`.tab-key`)
@@ -197,6 +211,10 @@ function notionPricingTab() {
 }
 
 
+/**
+ * Handles menu toggle
+ * @author Nura Alam Rifat
+ */
 function notionToggleMenu() {
     let toggler = $(`.toggler`);
     let menu = $(`.top-nav`);
