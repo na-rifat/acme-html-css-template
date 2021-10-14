@@ -1,5 +1,5 @@
 # notionhive
-Figma to HTML template conversion    
+Figma to HTML template conversion    <br>
 <a href="https://project.rafalotech.com/notion-hive/" target="_blank">Live link</a>  
 Point to be noted!!!  
 There is only two compatible mode for responsiveness  
