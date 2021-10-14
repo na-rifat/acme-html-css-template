@@ -251,7 +251,7 @@ section.customer-logos .logo-holder {
 
 /* Content panel */
 section.content-panel .row {
-    padding: 80px 0;
+    padding: 40px 0;
     /* display: flex;
     align-items: center; */
 }
@@ -303,6 +303,10 @@ section.accordion-section p {
     position: absolute;
     bottom: -40px;
     left: -70px;
+    filter: drop-shadow(0px 0px 70px rgba(0, 0, 0, 0.25));
+}
+.pricing-section h2 {
+    margin-bottom: 80px;
 }
 
 /* Video panel */
@@ -384,10 +388,10 @@ section.video-panel p:last-child {
     color: #000000;
 }
 .content-panel .col-md-6:first-child.content-container {
-    padding-right: 7rem;
+    padding-right: 11rem;
 }
 .content-panel .col-md-6:last-child.content-container {
-    padding-left: 7rem;
+    padding-left: 11rem;
 }
 .link {
     font-family: Helvetica;
@@ -403,6 +407,11 @@ section.video-panel p:last-child {
     /* Primary 1 – #0065F2 */
 
     color: #0065f2;
+}
+
+.content-panel .col-md-12 {
+    display: flex;
+    align-items: center;
 }
 /* Pricing section */
 section.pricing-section {
@@ -576,7 +585,7 @@ section.pricing-section {
 /* Accordion sections */
 section.accordion-section {
     text-align: center;
-    padding: 80px 0;
+    padding: 60px 0;
 }
 .notion-accordion {
     text-align: left;
@@ -640,7 +649,7 @@ section.bottom-section {
     align-items: center;
     flex-flow: column;
     text-align: center;
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 section.bottom-section > * {
@@ -670,7 +679,7 @@ footer .row {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 40px;
+    padding: 22px;
 }
 footer .row:nth-child(1) {
     justify-content: space-between;
@@ -712,4 +721,17 @@ footer .row:nth-child(1) {
 }
 .copyright-row > *:not(:last-child) {
     margin-right: 17px;
+}
+footer .logo {
+    margin-right: auto;
+}
+footer .social-icons {
+    margin-left: auto;
+}
+footer .footer-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+footer .row {
+    margin-right: 0;
 }
