@@ -166,6 +166,8 @@ function notionPricingTab() {
         currentPage = parent.find(`.tab-page.active`)
         let self = $(this)
 
+        if (currentKey.index() == self.index()) return;
+
         currentKey.removeClass(`active`);
         currentPage.removeClass(`active`)
 
