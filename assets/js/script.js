@@ -1,16 +1,18 @@
 $(document).ready(function () {
     notionCarousel(
         {
-
+            autoplay: true,
+            autoplayInterval: 3000
         }
     );
     notionAccordion(
         {
-
+            startIndex: 1
         }
     );
 
     notionPricingTab();
+    notionToggleMenu();
 });
 
 function notionCarousel(props) {
@@ -110,6 +112,15 @@ function notionCarousel(props) {
             }
         )
     })
+
+    let interval = props.autoplayInterval == undefined ? 2000 : props.autoplayInterval
+    let autoplay = props.autoplay == undefined ? false : props.autoplay;
+
+    if (autoplay == true) {
+        setInterval(() => {
+            nextBtn.trigger(`click`)
+        }, interval);
+    }
 }
 
 function notionAccordion(props) {
@@ -152,6 +163,10 @@ function notionAccordion(props) {
             })
         }
     })
+
+    if (props.startIndex != undefined) {
+        keys.eq(props.startIndex).trigger(`click`)
+    }
 }
 
 function notionPricingTab() {
@@ -178,5 +193,32 @@ function notionPricingTab() {
                 $(this).addClass(`active`)
             })
         })
+    })
+}
+
+
+function notionToggleMenu() {
+    let toggler = $(`.toggler`);
+    let menu = $(`.top-nav`);
+
+    toggler.on(`click`, function (e) {
+        if (menu.css(`display`) == `none`) {
+            menu.slideDown(300)
+            $(this).find(`img`).css(
+                {
+                    transition: `.3s all linear`,
+                    transform: `rotate(90deg)`
+                }
+            )
+        } else {
+            menu.slideUp(300)
+            $(this).find(`img`).css(
+                {
+                    transition: `.3s all linear`,
+                    transform: `rotate(0deg)`
+                }
+            )
+        }
+
     })
 }

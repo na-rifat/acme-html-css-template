@@ -762,8 +762,26 @@ footer .row {
 /* Responsive designs */
 @media only screen and (max-width: 320px) {
     /* Header */
+    header {
+        position: relative;
+    }
     .top-nav {
         display: none;
+        width: 100% !important;
+        position: absolute;
+        z-index: 999;
+        background-color: white;
+        left: 0;
+        top: 100%;
+        height: auto;
+    }
+    .top-nav ul {
+        flex-flow: column;
+    }
+    .top-nav li {
+        padding: 10px 0;
+        border: 1px solid var(--gray);
+        margin-top: -1px;
     }
     header .toggler {
         display: flex;
@@ -914,22 +932,25 @@ footer .row {
     }
 
     /* Customers */
-    .logo-holder img:nth-child(1){
-        order: ;
+    .logo-holder img {
+        padding: 0 20px;
     }
-    .logo-holder img:nth-child(2){
-
+    .logo-holder img:nth-child(1) {
+        order: 4;
     }
-    .logo-holder img:nth-child(3){
-
+    .logo-holder img:nth-child(2) {
+        order: 5;
     }
-    .logo-holder img:nth-child(4){
-
+    .logo-holder img:nth-child(3) {
+        order: 6;
     }
-    .logo-holder img:nth-child(5){
-
+    .logo-holder img:nth-child(4) {
+        order: 1;
     }
-    .logo-holder img:nth-child(6){
-
+    .logo-holder img:nth-child(5) {
+        order: 2;
+    }
+    .logo-holder img:nth-child(6) {
+        order: 3;
     }
 }
